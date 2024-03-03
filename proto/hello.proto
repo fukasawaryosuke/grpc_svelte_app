@@ -1,0 +1,30 @@
+// protoのバージョン
+syntax = "proto3";
+
+package hello;
+
+//出力先を指定
+option go_package = "/hello";
+
+// APIにおけるサービス定義
+service Greeter {
+  // unary call
+  rpc SayHello(HelloRequest) returns (HelloReply);
+  // server streaming call
+  rpc SayRepeatHello(RepeatHelloRequest) returns (stream HelloReply);
+}
+
+// リクエストのメッセージ型を定義
+message HelloRequest {
+  string name = 1;
+}
+
+message RepeatHelloRequest {
+  string name = 1;
+  int32 count = 2;
+}
+
+// レスポンスのメッセージ型を定義
+message HelloReply {
+  string message = 1;
+}
