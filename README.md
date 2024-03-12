@@ -24,7 +24,7 @@ client配下にSvelteプロジェクトをインストール
 npx degit sveltejs/template client
 ```
 
-http://localhost:8080で起動
+http://localhost:8080 で起動
 
 ```
 cd client
